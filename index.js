@@ -8,16 +8,19 @@ const exibirEstatisticas = require('./exibirEstatisticas.js');
 const prompt = require('prompt-sync')();
 
 const options = [
-    "1 - Listar livros",
-    "2 - Buscar livro",
-    "3 - Listar livros disponiveis",
-    "4 - Cadastrar livro",
-    "5 - Realizar emprestimo",
-    "6 - Realizar devolucao",
-    "7 - Exibir estatisticas",
-    "0 - Sair"
+    "(1) - Listar livros",
+    "(2) - Buscar livro",
+    "(3) - Listar livros disponiveis",
+    "(4) - Cadastrar livro",
+    "(5) - Realizar emprestimo",
+    "(6) - Realizar devolucao",
+    "(7) - Exibir estatisticas",
+    "(0) - Sair"
 ];
 
+console.log('------------------------------');
+console.log('Sistema de Bibliotecas');
+console.log('------------------------------');
 console.log(options);
 const opcion = prompt('escolha uma opçao:');
 
