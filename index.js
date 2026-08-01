@@ -1,4 +1,10 @@
-
+const listarLivrosDisponiveis = require('./listarDisponiveis.js');
+const cadastrarLivro = require('./cadastrarLivro.js');
+const listarLivros = require('./listarLivros.js');
+const buscarLivro = require('./buscarLivros.js');
+const realizarEmprestimo = require('./realizarEmprestimo.js');
+const realizarDevolucao = require('./realizarDevolucao.js');
+const exibirEstatisticas = require('./exibirEstatisticas.js');
 const prompt = require('prompt-sync')();
 
 const options = [
@@ -6,8 +12,8 @@ const options = [
     "2 - Buscar livro",
     "3 - Listar livros disponiveis",
     "4 - Cadastrar livro",
-    "5- Realizar emprestimo",
-    "6 - Realizar emprestimo",
+    "5 - Realizar emprestimo",
+    "6 - Realizar devolucao",
     "7 - Exibir estatisticas",
     "0 - Sair"
 ];
@@ -18,25 +24,25 @@ const opcion = prompt('escolha uma opçao:');
 
 switch (opcion) {
     case "1":
-        console.log("Listar livros");
+        listarLivros();
         break;
     case "2":
-        console.log("Buscar livro");
+        buscarLivro();
         break;
     case "3":
         listarLivrosDisponiveis();
         break;
     case "4":
-        console.log("Cadastrar livro");
+        cadastrarLivro();
         break;
     case "5":
-        console.log("Realizar emprestimo");
+        realizarEmprestimo();
         break;
     case "6":
-        console.log("Realizar devolucao");
+        realizarDevolucao();
         break;
     case "7":
-        console.log("Exibir estatisticas");
+        exibirEstatisticas();
         break;
     case "0":
         console.log("Sair");
