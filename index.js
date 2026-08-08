@@ -7,49 +7,55 @@ const realizarDevolucao = require('./realizarDevolucao.js');
 const exibirEstatisticas = require('./exibirEstatisticas.js');
 const prompt = require('prompt-sync')();
 
-const options = [
-    "(1) - Listar livros",
-    "(2) - Buscar livro",
-    "(3) - Listar livros disponiveis",
-    "(4) - Cadastrar livro",
-    "(5) - Realizar emprestimo",
-    "(6) - Realizar devolucao",
-    "(7) - Exibir estatisticas",
-    "(0) - Sair"
-];
+option = true;
 
-console.log('------------------------------');
-console.log('Sistema de Bibliotecas');
-console.log('------------------------------');
-console.log(options);
-const opcion = prompt('escolha uma opçao:');
+do {
 
+    const options = [
+        "(1) - Listar livros",
+        "(2) - Buscar livro",
+        "(3) - Listar livros disponiveis",
+        "(4) - Cadastrar livro",
+        "(5) - Realizar emprestimo",
+        "(6) - Realizar devolucao",
+        "(7) - Exibir estatisticas",
+        "(0) - Sair"
+    ];
 
-switch (opcion) {
-    case "1":
-        listarLivros();
-        break;
-    case "2":
-        buscarLivro();
-        break;
-    case "3":
-        listarLivrosDisponiveis();
-        break;
-    case "4":
-        cadastrarLivro();
-        break;
-    case "5":
-        realizarEmprestimo();
-        break;
-    case "6":
-        realizarDevolucao();
-        break;
-    case "7":
-        exibirEstatisticas();
-        break;
-    case "0":
-        console.log("Sair");
-        break;
-    default:
-        console.log("Opção inválida colocar só o número da opção");
-}
+    console.log('------------------------------');
+    console.log('Sistema de Bibliotecas');
+    console.log('------------------------------');
+    console.log(options);
+    let opcion = prompt('escolha uma opçao:');
+
+    switch (opcion) {
+        case "1":
+            listarLivros();
+            break;
+        case "2":
+            buscarLivro();
+            break;
+        case "3":
+            listarLivrosDisponiveis();
+            break;
+        case "4":
+            cadastrarLivro();
+            break;
+        case "5":
+            realizarEmprestimo();
+            break;
+        case "6":
+            realizarDevolucao();
+            break;
+        case "7":
+            exibirEstatisticas();
+            break;
+        case "0":
+            console.log("Sair");
+            opcion = false;
+            return opcion;
+            break;
+        default:
+            console.log("Opção inválida colocar só o número da opção");
+    }
+} while (opcion == true);
