@@ -51,8 +51,8 @@ do {
             break;
         case "0":
             console.log("Sair");
-            opcion = false;
-            return opcion;
+            option = false;
+            return option;
             break;
         default:
             console.log("Opção inválida colocar só o número da opção");

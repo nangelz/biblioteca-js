@@ -71,8 +71,22 @@ const dados = [
     }
 ];
 
+function normalizarLivro(livro) {
+    return {
+        titulo: livro.titulo ?? livro.nome ?? '',
+        autor: livro.autor ?? livro.author ?? '',
+        categoria: livro.categoria ?? livro.category ?? '',
+        paginas: livro.paginas ?? livro.numberOfPages ?? 0,
+        disponivel: livro.disponivel ?? livro.disponibilidade ?? true
+    };
+}
+
 function dadosLivros() {
+    dados.forEach((livro, index) => {
+        dados[index] = normalizarLivro(livro);
+    });
+
     return dados;
 }
 
-module.exports = dadosLivros;   
+module.exports = dadosLivros;
