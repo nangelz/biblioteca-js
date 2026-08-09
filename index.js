@@ -6,8 +6,7 @@ const realizarEmprestimo = require('./realizarEmprestimo.js');
 const realizarDevolucao = require('./realizarDevolucao.js');
 const exibirEstatisticas = require('./exibirEstatisticas.js');
 const prompt = require('prompt-sync')();
-
-option = true;
+let option = true;
 
 do {
 
@@ -52,10 +51,10 @@ do {
             break;
         case "0":
             console.log("Sair");
-            opcion = false;
-            return opcion;
+            option = false;
+            return option;
             break;
         default:
             console.log("Opção inválida colocar só o número da opção");
     }
-} while (opcion == true);
+} while (option == true);

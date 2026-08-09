@@ -11,7 +11,6 @@ module.exports = function listarLivros() {
             Número de páginas: ${livro.numberOfPages},
             Disponibilidade: ${livro.disponibilidade ? 'Disponível' : 'Indisponível'}`);
     });
-    opcion = true;
-    return opcion;
+
 
 }

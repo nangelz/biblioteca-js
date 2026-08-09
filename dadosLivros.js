@@ -1,21 +1,78 @@
-function dadosLivros() {
-    dados = [
-        {
-            nome: "O senhor dos anéis",
-            author: "J.R.R. Tolkien",
-            category: "Fantasia",
-            numberOfPages: 1178,
-            disponibilidade: true
-        },
-        {
-            nome: "1984",
-            author: "George Orwell",
-            category: "Ficção Científica",
-            numberOfPages: 336,
-            disponibilidade: false
-        }
-    ];
-    return dados;
+const dados = [
+    {
+        titulo: "JavaScript para Iniciantes",
+        autor: "Ana Souza",
+        categoria: "Programação",
+        paginas: 280,
+        disponivel: true
+    },
+    {
+        titulo: "CSS Moderno",
+        autor: "Carlos Lima",
+        categoria: "Web Design",
+        paginas: 190,
+        disponivel: false
+    },
+    {
+        titulo: "HTML Essencial",
+        autor: "Fernanda Rocha",
+        categoria: "Programação",
+        paginas: 250,
+        disponivel: true
+    },
+    {
+        titulo: "Lógica de Programação",
+        autor: "Marcos Silva",
+        categoria: "Programação",
+        paginas: 320,
+        disponivel: true
+    },
+    {
+        titulo: "Banco de Dados",
+        autor: "Juliana Costa",
+        categoria: "Banco de Dados",
+        paginas: 410,
+        disponivel: false
+    },
+    {
+        titulo: "Git e GitHub",
+        autor: "Lucas Pereira",
+        categoria: "Ferramentas",
+        paginas: 170,
+        disponivel: true
+    },
+    {
+        titulo: "Node.js na Prática",
+        autor: "Eduardo Martins",
+        categoria: "Programação",
+        paginas: 360,
+        disponivel: true
+    },
+    {
+        titulo: "UX Design",
+        autor: "Patrícia Alves",
+        categoria: "Design",
+        paginas: 220,
+        disponivel: false
+    },
+    {
+        titulo: "Angular Completo",
+        autor: "Roberto Santos",
+        categoria: "Programação",
+        paginas: 430,
+        disponivel: true
+    },
+    {
+        titulo: "React para Web",
+        autor: "Camila Ferreira",
+        categoria: "Programação",
+        paginas: 390,
+        disponivel: true
+    }
+];
 
+function dadosLivros() {
+    return dados;
 }
+
 module.exports = dadosLivros;   

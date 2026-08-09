@@ -1,6 +1,6 @@
 const dadosLivros = require('./dadosLivros.js');
 
-export class Livro {
+class Livro {
     constructor(title, author, category, numberOfPages, disponibilidade) {
         this.title = title;
         this.author = author;
@@ -8,7 +8,29 @@ export class Livro {
         this.numberOfPages = numberOfPages;
         this.disponibilidade = disponibilidade;
     }
-    livros = dadosLivros.map(livro => new Livro(livro.nome, livro.autor, livro.categoria, livro.numeroDePaginas, livro.disponibilidade));
 
+    emprestar() {
+        this.disponibilidade = false;
+    }
 
+    devolver() {
+        this.disponibilidade = true;
+    }
+
+    static emprestarLivro(livro) {
+        if (livro && livro.disponibilidade) {
+            livro.disponibilidade = false;
+            return true;
+        }
+        return false;
+    }
+    static devolverLivro(livro) {
+        if (livro && !livro.disponibilidade) {
+            livro.disponibilidade = true;
+            return true;
+        }
+        return false;
+    }
 }
+
+module.exports = { Livro }; 
