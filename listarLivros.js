@@ -1,8 +1,9 @@
 const dadosLivros = require('./dadosLivros.js');
 
-module.exports = function listarLivrosDisponiveis() {
-    console.log("Lista de livros disponíveis:");
-    dadosLivros().filter(livro => livro.disponibilidade).forEach((livro, index) => {
+module.exports = function listarLivros() {
+
+    console.log("Lista de livros cadastrados:");
+    dadosLivros().forEach((livro, index) => {
         console.log(`index : ${index + 1}. 
             Título: ${livro.nome},
             Autor: ${livro.author},
@@ -10,4 +11,6 @@ module.exports = function listarLivrosDisponiveis() {
             Número de páginas: ${livro.numberOfPages},
             Disponibilidade: ${livro.disponibilidade ? 'Disponível' : 'Indisponível'}`);
     });
+
+
 }
