@@ -11,12 +11,13 @@ module.exports = function cadastrarLivro() {
     const disponibilidade = true;
 
     const newBook = new Livro(title, author, category, numberOfPages, disponibilidade);
-    dadosLivros().push({
-        nome: newBook.title,
-        author: newBook.author,
-        category: newBook.category,
-        numberOfPages: newBook.numberOfPages,
-        disponibilidade: newBook.disponibilidade
+    const livros = dadosLivros();
+    livros.push({
+        titulo: newBook.titulo,
+        autor: newBook.autor,
+        categoria: newBook.categoria,
+        paginas: newBook.paginas,
+        disponivel: newBook.disponivel
     });
 
     console.log('Livro cadastrado com sucesso!');
