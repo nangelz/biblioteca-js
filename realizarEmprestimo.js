@@ -4,14 +4,14 @@ const { Livro } = require('./Livro.js');
 
 module.exports = function realizarEmprestimo() {
     const title = prompt('Digite o título do livro que deseja emprestar: ');
-    const livroEncontrado = dadosLivros().find(livro => livro.nome.toLowerCase() === title.toLowerCase());
+    const livroEncontrado = dadosLivros().find(livro => livro.titulo.toLowerCase() === title.toLowerCase());
 
     if (!livroEncontrado) {
         console.log('Livro não encontrado.');
         return;
     }
 
-    if (!livroEncontrado.disponibilidade) {
+    if (!livroEncontrado.disponivel) {
         console.log('Livro já está emprestado.');
         return;
     }
@@ -19,8 +19,8 @@ module.exports = function realizarEmprestimo() {
     const emprestado = Livro.emprestarLivro(livroEncontrado);
     if (emprestado) {
         console.log('Empréstimo realizado com sucesso!');
-        console.log(`Título: ${livroEncontrado.nome}`);
-        console.log(`Disponibilidade: ${livroEncontrado.disponibilidade ? 'Disponível' : 'Indisponível'}`);
+        console.log(`Título: ${livroEncontrado.titulo}`);
+        console.log(`Disponibilidade: ${livroEncontrado.disponivel ? 'Disponível' : 'Indisponível'}`);
     } else {
         console.log('Não foi possível realizar o empréstimo.');
     }
