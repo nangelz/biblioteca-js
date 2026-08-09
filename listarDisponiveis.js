@@ -1,6 +1,6 @@
-const dadosLivros = require('./dadosLivros.js');
+import { dadosLivros } from './dadosLivros.js';
 
-module.exports = function listarLivrosDisponiveis() {
+export function listarLivrosDisponiveis() {
     console.log("Lista de livros disponíveis:");
     dadosLivros().filter(livro => livro.disponibilidade).forEach((livro, index) => {
         console.log(`index : ${index + 1}. 

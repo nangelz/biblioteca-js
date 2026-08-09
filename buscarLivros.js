@@ -1,10 +1,10 @@
 const prompt = require('prompt-sync')();
-const dadosLivros = require('./dadosLivros.js');
+import { dadosLivros } from './dadosLivros.js';
 
-module.exports = function buscarLivro() {
+export function buscarLivro() {
     const title = prompt('Digite o título do livro que deseja buscar: ');
     // Sintaxis: array.find(callback(element, index, array), thisArg)
-    const livroEncontrado = dadosLivros().find(livro => livro.nome.toLowerCase() === title.toLowerCase());
+    const livroEncontrado = dadosLivros.find(livro => livro.nome.toLowerCase() === title.toLowerCase());
     if (livroEncontrado) {
         console.log('-------------------------------');
         console.log('Livro encontrado:');

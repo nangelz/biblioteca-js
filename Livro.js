@@ -1,14 +1,19 @@
-const dadosLivros = require('./dadosLivros.js');
+import { dadosLivros } from './dadosLivros.js';
 
 export class Livro {
     constructor(title, author, category, numberOfPages, disponibilidade) {
         this.title = title;
         this.author = author;
         this.category = category;
-        this.numberOfPages = numberOfPages;
+        this.pages = pages;
         this.disponibilidade = disponibilidade;
     }
-    livros = dadosLivros.map(livro => new Livro(livro.nome, livro.autor, livro.categoria, livro.numeroDePaginas, livro.disponibilidade));
+    livros = dadosLivros.map(livro => new Livro(livro.titulo, livro.autor, livro.categoria, livro.paginas, livro.disponivel));
 
+    #dados = [];
 
+    //get de #itens
+    listarLivros() {
+        return this.#dados;
+    }
 }

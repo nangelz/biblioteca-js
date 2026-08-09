@@ -1,7 +1,7 @@
-const dadosLivros = require('./dadosLivros.js');
-const { Livro } = require('./Livro.js');
+import { dadosLivros } from './dadosLivros.js';
+import { Livro } from './Livro.js';
 
-module.exports = function cadastrarLivro(title, author, category, numberOfPages, disponibilidade) {
+export function cadastrarLivro(title, author, category, numberOfPages, disponibilidade) {
     // Implementation for registering a new book
     const prompt = require('prompt-sync')();
     const newBook = new Livro(title, author, category, numberOfPages, disponibilidade);
