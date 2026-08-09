@@ -1,13 +1,12 @@
-import { listarLivrosDisponiveis } from './listarDisponiveis.js';
-import { cadastrarLivro } from './cadastrarLivro.js';
-import { listarLivros } from './listarLivros.js';
-import { buscarLivro } from './buscarLivros.js';
-import { realizarEmprestimo } from './realizarEmprestimo.js';
-import { realizarDevolucao } from './realizarDevolucao.js';
-import { exibirEstatisticas } from './exibirEstatisticas.js';
+const listarLivrosDisponiveis = require('./listarDisponiveis.js');
+const cadastrarLivro = require('./cadastrarLivro.js');
+const listarLivros = require('./listarLivros.js');
+const buscarLivro = require('./buscarLivros.js');
+const realizarEmprestimo = require('./realizarEmprestimo.js');
+const realizarDevolucao = require('./realizarDevolucao.js');
+const exibirEstatisticas = require('./exibirEstatisticas.js');
 const prompt = require('prompt-sync')();
-
-option = true;
+let option = true;
 
 do {
 
@@ -52,9 +51,9 @@ do {
             break;
         case "0":
             console.log("Sair");
-            opcion = false;
+            option = false;
             break;
         default:
             console.log("Opção inválida colocar só o número da opção");
     }
-} while (opcion == true);
+} while (option == true);

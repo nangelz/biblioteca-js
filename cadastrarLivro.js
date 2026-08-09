@@ -1,16 +1,24 @@
-import { dadosLivros } from './dadosLivros.js';
-import { Livro } from './Livro.js';
+const dadosLivros = require('./dadosLivros.js');
+const { Livro } = require('./Livro.js');
 
-export function cadastrarLivro(title, author, category, numberOfPages, disponibilidade) {
-    // Implementation for registering a new book
+module.exports = function cadastrarLivro() {
     const prompt = require('prompt-sync')();
-    const newBook = new Livro(title, author, category, numberOfPages, disponibilidade);
-    // Here you would typically add the newBook to a collection or database
-    title = prompt('Digite o título do livro: ');
-    author = prompt('Digite o autor do livro: ');
-    category = prompt('Digite a categoria do livro: ');
-    numberOfPages = prompt('Digite o número de páginas do livro: ');
-    disponibilidade = true; // Assuming new books are available by defaul
-    return newBook;
 
-}
+    const title = prompt('Digite o título do livro: ');
+    const author = prompt('Digite o autor do livro: ');
+    const category = prompt('Digite a categoria do livro: ');
+    const numberOfPages = parseInt(prompt('Digite o número de páginas do livro: '), 10);
+    const disponibilidade = true;
+
+    const newBook = new Livro(title, author, category, numberOfPages, disponibilidade);
+    dadosLivros().push({
+        nome: newBook.title,
+        author: newBook.author,
+        category: newBook.category,
+        numberOfPages: newBook.numberOfPages,
+        disponibilidade: newBook.disponibilidade
+    });
+
+    console.log('Livro cadastrado com sucesso!');
+    return newBook;
+};

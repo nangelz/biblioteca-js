@@ -1,6 +1,6 @@
-import { dadosLivros } from './dadosLivros.js';
+const dadosLivros = require('./dadosLivros.js');
 
-export function listarLivros() {
+module.exports = function listarLivros() {
 
     console.log("Lista de livros cadastrados:");
     dadosLivros().forEach((livro, index) => {
@@ -11,7 +11,6 @@ export function listarLivros() {
             Número de páginas: ${livro.numberOfPages},
             Disponibilidade: ${livro.disponibilidade ? 'Disponível' : 'Indisponível'}`);
     });
-    opcion = true;
-    return opcion;
+
 
 }
